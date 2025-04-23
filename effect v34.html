@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Women's Clothing</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo i {
+      font-size: 24px;
+      margin-right: 8px;
+      color: orange;
+    }
+
+    .logo span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-icons i {
+      font-size: 22px;
+      cursor: pointer;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    .header-icons i:hover {
+      color: orange;
+    }
+
+    .searchbox {
+      padding: 10px;
+      background-color: #f8f8f8;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    .searchbox.show {
+      display: block;
+    }
+
+    .searchbox input[type="text"] {
+      padding: 6px;
+      font-size: 17px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 60%;
+      max-width: 300px;
+    }
+
+    .searchbox button {
+      padding: 8px 16px;
+      margin-left: 10px;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .searchbox button:hover {
+      background: blue;
+    }
+
+    .menu-button {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #444;
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      padding: 10px;
+      border-radius: 4px;
+      z-index: 999;
+    }
+
+    .mobile-menu a {
+      color: white;
+      padding: 8px 0;
+      text-decoration: none;
+    }
+
+    .mobile-menu a:hover {
+      text-decoration: underline;
+    }
+
+    .mobile-menu.show {
+      display: flex;
+    }
+
+    .parallax-section {
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;  
+      background-position: center; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      font-size: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="logo">
+    <i class="fas fa-tshirt"></i>
+    <span>Cotton Mouse</span>
+  </div>
+  <div class="header-icons">
+    <i class="fas fa-search" onclick="toggleSearch()"></i>
+    <div class="menu-button" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<!-- Search Box -->
+<div id="searchContainer" class="searchbox">
+  <form id="searchForm" onsubmit="performSearch(event)">
+    <input type="text" placeholder="Search..." id="searchInput" />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+	 <div class="parallax-container">
+	<div class="parallax-background"></div>
+	<div class="content">
+	    <a href="cardigan-page v1.html">
+	<div>
+
+<!-- Clothing Sections -->
+<div id="cardigan" class="parallax-section" style="background-image: url('Cardigan.jpg');">
+  <h1>Cardigan</h1>
+</div>
+
+	 <class="parallax-container">
+	<div class="parallax-background"></div>
+	<div class="content">
+	    <a href="sweatpants-page v1.html">
+	<div>
+
+
+<div id="sweat-pant" class="parallax-section" style="background-image: url('sweat pants.jpg');">
+  <h1>Sweat Pant</h1>
+</div>
+
+	 <class="parallax-container">
+	<div class="parallax-background"></div>
+	<div class="content">
+	    <a href="sweatpants-page v1.html">
+	<div>
+
+<div id="skirt" class="parallax-section" style="background-image: url('Skirt.jpg');">
+  <h1>Skirts</h1>
+</div>
+
+	 <class="parallax-container">
+	<div class="parallax-background"></div>
+	<div class="content">
+	    <a href="shirt-page v8.html">
+	<div>
+
+<div id="shirt" class="parallax-section" style="background-image: url('shirt.jpg');">
+  <h1>Shirt</h1>
+</div>
+
+<!-- Mobile Menu -->
+<nav id="mobileMenu" class="mobile-menu">
+  <a href="#cardigan">Cardigan</a>
+  <a href="#sweat-pant">Sweat Pant</a>
+  <a href="skirt-page v5.html">Skirt</a>
+  <a href="#shirt">Shirt</a>
+</nav>
+
+<!-- JS -->
+<script>
+  function toggleSearch() {
+    const search = document.getElementById('searchContainer');
+    search.classList.toggle('show');
+    if (search.classList.contains('show')) {
+      document.getElementById('searchInput').focus();
+    }
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
+  }
+
+  function performSearch(event) {
+    event.preventDefault();
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+    if (!searchTerm) {
+      alert("Please enter a search term");
+      return;
+    }
+
+    const sections = {
+      "cardigan": document.getElementById("cardigan"),
+      "sweat pant": document.getElementById("sweat-pant"),
+      "skirt": document.getElementById("skirt"),
+      "shirt": document.getElementById("shirt")
+    };
+
+    const foundSection = sections[searchTerm];
+
+    if (foundSection) {
+      foundSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      alert("No matching items found. Available items: Cardigan, Sweat Pant, Skirt, Shirt");
+    }
+  }
+</script>
+
+</body>
+</html>
