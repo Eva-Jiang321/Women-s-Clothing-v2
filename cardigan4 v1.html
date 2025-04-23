@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skirt 1 Details</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #fefefe;
+      color: #333;
+    }
+
+    img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 1.5em;
+      color: #d14a4a;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      background-color: #ff4081;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .btn:hover {
+      background-color: #e73370;
+    }
+
+    .confirmation {
+      color: green;
+      margin-top: 10px;
+    }
+
+    a.back-link {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>pink cardigan<h1>
+  <img src="cardigan 4.jpg" alt="pink cardigan">
+
+  <div class="price">$32.82</div>
+
+  <div class="description">
+    This pink cardigan is perfect for the cold and casual day. 
+    Made from lightweight wool.
+    <br><br>
+    <strong>Sizes:</strong> S, M, L, XL<br>
+    <strong>Colors:</strong>  white, black, blue, pink
+  </div>
+
+  <button class="btn" onclick="addToCart()">Add to Cart</button>
+  <div id="confirmation" class="confirmation"></div>
+
+  <a class="back-link" href="cardigan-page v1.html">← Back to all skirts</a>
+
+  <script>
+    function addToCart() {
+      const item = {
+        id: 1,
+        name: 'pink cardigan',
+        price: 32.82,
+        image: 'cardigan 4.jpg'
+      };
+
+      // Get existing cart or create a new one
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Add new item
+      cart.push(item);
+
+      // Save it back to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Show confirmation
+      document.getElementById('confirmation').textContent = "Added to cart!";
+    }
+  </script>
+
+</body>
+</html>
